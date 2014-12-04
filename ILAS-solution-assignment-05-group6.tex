@@ -37,6 +37,8 @@
 
 	\tikzset{node distance=2cm, inner/.style={draw,circle}, leaf/.style={draw,rectangle}}
 
+	\usepackage{hyperref}
+
 	% info for header block in upper right hand corner
 	\name{Group 6: Timm Behner, Philipp Bruckschen, Patrick Kaster, Markus Schwalb}
 	\class{MA-INF 4111 - Intelligent Learning and Analysis Systems: Machine Learning}
@@ -103,6 +105,27 @@
 			\end{enumerate}
 			
 		\end{solution}		
+
+		\begin{problem}[2. $k$-NN]
+		\end{problem}
+		\begin{solution}
+			\begin{enumerate}[(a)]
+				\item We considered the source of the dataset: 
+					\url{https://archive.ics.uci.edu/ml/datasets/Contraceptive+Method+Choice}.
+				Here it is stated that the categorical always
+				represent some kind of scale and correspond to
+				integer values on that scale. So we change the
+				values given in the input file from letters to
+				integer numbers and the boolean values ``true''
+				and ``false'' to 1 and 0. Now we can apply the
+				eucledian distance function:
+				\begin{align}
+					\delta (x,y) = \sqrt{ \sum_{i=1}^n (x_i-y_i)^2}
+				\end{align}
+			\item See \verb$output_knn.log$ and \verb$README.md$.
+			\item See \verb$output_leave_one_out.log$ and \verb$README.md$.
+			\end{enumerate}
+		\end{solution}
 
 		\begin{problem}[3. Hypothesis Testing
 ]		\end{problem}
