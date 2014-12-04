@@ -3,11 +3,9 @@ import string
 import sys
 import math
 
-#FIXME check for python version, the code below requires >= 3.2
-
 class Example:
     """
-    example for the training with tdidt
+    example
     """
     def __init__(self,value_hash,outcome):
         self.value_hash = value_hash
@@ -74,6 +72,9 @@ class ExampleSet:
                 self.negatives += 1
 
     def transfer_to_numerical(self):
+        """
+        transfer all non-numerical attributes to numerical attributes
+        """
         for example in self.examples:
             for a_key in example.value_hash.keys():
                 if self.attributes[a_key] == 'c':

@@ -1,17 +1,25 @@
 #!/usr/bin/env python3
 import knn
 import example
+import sys
 from optparse import OptionParser
+
+if sys.version_info[0] < 3 or sys.version_info[0] == 3 and sys.version_info[1] < 2:
+    raise Exception('Need Python with version newer than 3.2')
 
 def leave_one_out(examples,k):
     right_classified = 0
     for ex in examples:
+        # disable only this example
         ex.active = False
+        # run the k-Nearest-Neighbor algorithm
         rank_list = knn.knn(k,examples,ex)
+        # check the voting for correctness
         outcome = knn.voting(rank_list)
         if outcome == ex.outcome:
             right_classified += 1
         ex.active = True
+    # return which share was correctly classified
     return right_classified/float(len(examples.examples))
 
 if __name__ == "__main__":
