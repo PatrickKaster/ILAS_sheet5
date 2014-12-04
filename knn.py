@@ -59,6 +59,6 @@ if __name__ == "__main__":
 
     for instance in instance_list:
         rl = knn(options.k,es,instance)
-        print("++++++++++  {}  +++++++++".format(instance.idx))
+        print("++++++++++  Example {}  +++++++++".format(instance.idx))
         for value, example in rl:
-            print("IDX: {}, Distance {}".format(example.idx, value))
+            print("Example: {}, Distance {}".format(example.idx, value))
