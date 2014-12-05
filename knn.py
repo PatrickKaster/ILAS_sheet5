@@ -68,12 +68,12 @@ if __name__ == "__main__":
         raise Exception('Need Python with version newer than 3.2')
 
     parser = OptionParser()
-    parser.add_option("-f", "--file", dest="input_file", help="file with examples", metavar="FILE")
+    parser.add_option("-f", "--file", dest="filename", help="file with examples", metavar="FILE")
     parser.add_option("-k", dest="k", help="number of nearest neighbors", metavar="NUMBER", type="int", default=1)
     (options, args) = parser.parse_args()
 
     es = example.ExampleSet()
-    if options.input_file is None:
+    if options.filename is None:
         input_file = sys.stdin
     else:
         input_file = open(options.filename,'r')
