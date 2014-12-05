@@ -21,3 +21,5 @@ None of the group members was willing to do this by hand so we implemented the
 k-Nearest-Neighbor algorithm and the Leave-One-Out cross validation in python.
 The algorithms are contained in knn.py and leaveoneout.py. Both depend on the
 Example class and the ExampleSet class.
+To be able to import the other files create an empty file caled __init__.py in
+the same folder.
