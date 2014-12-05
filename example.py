@@ -37,12 +37,10 @@ class ExampleSet:
         self.positives = 0
         self.negatives = 0
 
-    def initialize_from_file(self,filename):
+    def initialize_from_file(self,input_file):
         """
         initialize this example set from a file as specified by the exercise
         """
-        input_file = open(filename,'r')
-
         # read the first line with attributes 
         init_line = input_file.readline()
         #  and parse this line into attribute name and type

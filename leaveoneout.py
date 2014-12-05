@@ -25,11 +25,15 @@ def leave_one_out(examples,k):
 if __name__ == "__main__":
     parser = OptionParser()
     parser.add_option("-f", "--file", dest="filename", help="file with examples", metavar="FILE")
-    parser.add_option("-k", dest="k", help="number of nearest neighbors", metavar="NUMBER", type="int")
+    parser.add_option("-k", dest="k", help="number of nearest neighbors", metavar="NUMBER", type="int", default=1)
     (options, args) = parser.parse_args()
 
     es = example.ExampleSet()
-    es.initialize_from_file(options.filename)
+    if options.filename is None:
+        input_file = sys.stdin
+    else:
+        input_file = open(options.filename,'r')
+    es.initialize_from_file(input_file)
     es.transfer_to_numerical()
 
     print("PCT of correctly classified = {}".format(leave_one_out(es,options.k)*100))
